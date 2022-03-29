@@ -1,0 +1,232 @@
+Datos Transmodal pipeline
+
+Nombre										|					Tipo									|	Logitud				|	Do
+------------------------------------------------------------------------------------------------------------------------------------------
+										
+Vendedor										CHAR														100						1
+
+Fecha											DATE 								
+			
+Semana											INT 														3 						1
+
+Nombre del cliente								CHAR														50
+
+Tipo de cliente									CHAR														50						1
+
+Tamaño del cliente								CHAR 														50
+
+Bussines Conection								CHAR														50						1
+
+Tipo de empresa									CHAR														50						1
+
+Tipo de industria								CHAR														100						1
+
+Tipo de mercancia								CHAR														50						1
+
+Tipo de venta									CHAR														50						
+
+Servicio										CHAR														50
+
+Contacto										CHAR														50
+
+Correo Electronico								CHAR														50
+
+Telefono										TEXT														20							
+
+Trafico											CHAR														50
+
+Tipo de servicio								CHAR														50
+
+Tipo de equipo / unidad 						CHAR
+
+Tipo de modalidad								CHAR
+
+Ciudad estado pais de origen
+
+Ciudad estado pais destino
+
+Licitacion										CHAR														50
+
+Target
+
+Volumen mensual									INT
+
+Volumen anual									INT
+
+Tarifa de compra en MXN o TC20 					???
+
+Profit											INT????
+
+Tarifa de venta en MXN o TC20 					???
+
+% de rentabilidad (profit/venta)
+
+Ingreso potencial mensual							INT
+	
+Ingreso potencial anual								INT
+
+Ultimo status
+
+Numero de rutas ofertadas						INT
+
+NO COTIZACION EN FORWARD / COMENTARIOS OP 		
+
+Comentarios del status
+
+Movimientos Rechazados
+
+Comentarios del rechazo
+
+
+
+
+TOTAL: 37
+
+
+Vendedor
+Fecha		
+Semana
+Nombre del cliete
+Tipo de cliente
+Tamaño del cliente
+Bussines Conection
+Tipo de empresa
+Tipo de industria
+Tipo de mercancia
+Tipo de venta
+Servicio
+Contacto
+Correo Electronico
+Telefono
+Trafico
+Tipo de servicio
+Tipo de equipo / unidad
+Tipo de modalidad
+Ciudad estado pais de origen
+Ciudad estado pais destino
+Licitacion
+Target
+Volumen mensual	
+Volumen anual
+Tarifa de compra en MXN o TC20 
+Profit
+Tarifa de venta en MXN o TC20 
+% de rentabilidad (profit/venta)
+Ingreso potencial mensual							
+Ingreso potencial anual	
+Ultimo status
+Numero de rutas ofertadas
+NO COTIZACION EN FORWARD / COMENTARIOS OP 		
+Comentarios del status
+Movimientos Rechazados
+Comentarios del rechazo
+
+
+CREATE TABLE pipeline (MovId BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY, Vendedor CHAR(100), Fecha DATE, Semana INT(3), NombreDelCliente CHAR (100), TipoDeCliente CHAR(50), TamañoDelCliente CHAR(50), BussinesConection CHAR(50), TipoDeEmpresa CHAR(50), TipoDeIndustria CHAR(50), TipoDeMercancia CHAR(100), TipoDeVenta CHAR(50), Servicio CHAR(50), Contacto CHAR(50), CorreoElectronico CHAR(50), Telefono CHAR(20), Trafico CHAR(50), TipoDeServicio CHAR(50), TipoDeEquipoUnidad CHAR(50), TipoDeModalidad CHAR(50), CiudadEstadoPaisOrigen CHAR(100), CiudadEstadoPaisDestino CHAR(100), Licitacion CHAR(50), Target CHAR(100), VolumenMensual INT(20), VolumenAnual INT(20), TarifaDeCompra INT(20), Profit INT(20), TarifaDeVenta INT(20), PorcentajeDeRentabilidad FLOAT(5), IngresoPotencialMensual INT(20), IngresoPotencialAnual INT(20), UltimoStatus CHAR(30), NumeroDeRutasOfertadas INT(10), NoCotizacionEnFowardComentariosOP CHAR(50), ComentariosDelStatus CHAR(200), MovimientosRechazados INT(10), ComentariosDelRechazo CHAR(100));
+
+
+
+
+Insert de prueba:
+INSERT INTO pipeline (Vendedor, Fecha, Semana, NombreDelCliente, TipoDeCliente, TamañoDeCliente, BussinesConection, TipoDeEmpresa, TipoDeIndustria, TipoDeMercancia, TipoDeVenta, Servicio, Contacto, CorreoElectronico, Telefono, Trafico, TipoDeServicio, TipoDeEquipoUnidad, TipoDeModalidad, CiudadEstadoPaisOrigen, CiudadEstadoPaisDestino, Licitacion, Target, VolumenMensual, VolumenAnual, TarifaDeCompra, Profit, TarifaDeVenta, PorcentajeDeRentabilidad, IngresoPotencialMensual, IngresoPotencialMensual, IngresoPotencialAnual, UltimoStatus, NumeroDeRutasOfertadas, NoCotizacionEnFowardComentariosOP, ComentariosDelStatus, MovimientosRechazados, ComentariosDelRechazo) VALUES('Juan',18122021,48,'logisticaJuanito','logistica devops', 'pyme', 'mkt','servers', 'tecnologia', 'laptops', 'Full', 'FFCC', 'TI', 'juanmange@transmodal.com.mx', '2292223012', 'pesado', 'Almacen', 'ferrocarril', 'Fullcontainer', 'boca del rio, ver, mx', 'ciudad de mexico,mexico, mx', 'si', 'prioriedad',45000,12,55000,10,12000,140000,'despachado',2,'foward','podemos darle mas seguimiento al cliente', 2, 'ninguno' );
+
+
+
+
+Vendedor, 									'Juan', a
+Fecha, 										18122021 a
+Semana, 										48
+NombreDelCliente, 								logisticaJuanito
+TipoDeCliente, 									logistica devops
+TamañoDeCliente, 								pyme								
+BussinesConection, 								mkt
+TipoDeEmpresa,									servidores
+ TipoDeIndustria, 								tecnologia
+ TipoDeMercancia, 								laptops
+ TipoDeVenta, 									Full
+ Servicio, 										FFCC
+ Contacto, 										TI
+ CorreoElectronico, 				juanmange@transmodal.com.mx	
+ Telefono, 							2291123121
+ Trafico, 										pesado
+ TipoDeServicio, 								Almacen
+ TipoDeEquipoUnidad, 							Ferrocarril
+ TipoDeModalidad, 								Fullcontainer
+ CiudadEstadoPaisOrigen, 		boca del rio, ver, mx
+ CiudadEstadoPaisDestino, 		ciudad de mexico,mexico, mx
+ Licitacion, 							si
+ Target, 								prio
+ VolumenMensual, 						45000
+ VolumenAnual, 							500000
+ TarifaDeCompra, 						125000
+ Profit, 								10
+ TarifaDeVenta, 						200000
+ PorcentajeDeRentabilidad,				12
+ IngresoPotencialMensual, 				400000
+ IngresoPotencialAnual, 				4000000
+ UltimoStatus, 						despachado
+ NumeroDeRutasOfertadas,				2
+ NoCotizacionEnFowardComentariosOP,		FOWARD
+ ComentariosDelStatus,	podemos darle mas seguimiento al cliente
+ MovimientosRechazados, 				2
+ ComentariosDelRechazo					ninguno
+
+
+
+
+
++-----------------------------------+---------------------+------+-----+---------+----------------+
+| Field                             | Type                | 	 | Key | Default | Extra          |
++-----------------------------------+---------------------+------+-----+---------+----------------+
+| MovId                             | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |-----
+| Vendedor                          | char(100)           | YES  |     | NULL    |                |Juan
+| Fecha                             | date                | YES  |     | NULL    |                |12022021
+| Semana                            | int(3)              | YES  |     | NULL    |                |48
+| NombreDelCliente                  | char(100)           | YES  |     | NULL    |                |logisticaJuanito
+| TipoDeCliente                     | char(50)            | YES  |     | NULL    |                |logistica devops
+| TamañoDelCliente                  | char(50)            | YES  |     | NULL    |                |pyme
+| BussinesConection                 | char(50)            | YES  |     | NULL    |                |mkt
+| TipoDeEmpresa                     | char(50)            | YES  |     | NULL    |                |Servidores
+| TipoDeIndustria                   | char(50)            | YES  |     | NULL    |                |tecnologia
+| TipoDeMercancia                   | char(100)           | YES  |     | NULL    |                |Laptops
+| TipoDeVenta                       | char(50)            | YES  |     | NULL    |                |Full
+| Servicio                          | char(50)            | YES  |     | NULL    |                |FFCC
+| Contacto                          | char(50)            | YES  |     | NULL    |                |TI
+| CorreoElectronico                 | char(50)            | YES  |     | NULL    |                |juanmange@transmodal.com.mx
+| Telefono                          | char(20)            | YES  |     | NULL    |                |2294213425
+| Trafico                           | char(50)            | YES  |     | NULL    |                |Ferrocarril
+| TipoDeServicio                    | char(50)            | YES  |     | NULL    |                |Almacen
+| TipoDeEquipoUnidad                | char(50)            | YES  |     | NULL    |                |contenedor
+| TipoDeModalidad                   | char(50)            | YES  |     | NULL    |                |Full container
+| CiudadEstadoPaisOrigen            | char(100)           | YES  |     | NULL    |                |boca del rio, ver, mx
+| CiudadEstadoPaisDestino           | char(100)           | YES  |     | NULL    |                |ciudad de mexico,mexico, mx
+| Licitacion                        | char(50)            | YES  |     | NULL    |                |Si
+| Target                            | char(100)           | YES  |     | NULL    |                |Prio
+| VolumenMensual                    | int(20)             | YES  |     | NULL    |                |45000
+| VolumenAnual                      | int(20)             | YES  |     | NULL    |                |500000
+| TarifaDeCompra                    | int(20)             | YES  |     | NULL    |                |125000
+| Profit                            | int(20)             | YES  |     | NULL    |                |65000
+| TarifaDeVenta                     | int(20)             | YES  |     | NULL    |                |50000
+| PorcentajeDeRentabilidad          | float               | YES  |     | NULL    |                |25
+| IngresoPotencialMensual           | int(20)             | YES  |     | NULL    |                |60000
+| IngresoPotencialAnual             | int(20)             | YES  |     | NULL    |                |720000
+| UltimoStatus                      | char(30)            | YES  |     | NULL    |                |Despachado
+| NumeroDeRutasOfertadas            | int(10)             | YES  |     | NULL    |                |10
+| NoCotizacionEnFowardComentariosOP | char(50)            | YES  |     | NULL    |                |foward
+| ComentariosDelStatus              | char(200)           | YES  |     | NULL    |                |Darle Seguimiento
+| MovimientosRechazados             | int(10)             | YES  |     | NULL    |                |3
+| ComentariosDelRechazo             | char(100)           | YES  |     | NULL    |                |Ninguno
++-----------------------------------+---------------------+------+-----+---------+----------------+---------------
+
+
+INSERT INTO pipeline (Vendedor, Fecha, Semana, NombreDelCliente, TipoDeCliente, TamañoDelCliente, BussinesConection, TipoDeEmpresa, TipoDeIndustria, TipoDeMercancia, TipoDeVenta, Servicio, Contacto, CorreoElectronico, Telefono, Trafico, TipoDeServicio, TipoDeEquipoUnidad  TipoDeModalidad , CiudadEstadoPaisOrigen, CiudadEstadoPaisDestino ,Licitacion ,Target , VolumenMensual ,VolumenAnual, TarifaDeCompra, Profit, TarifaDeVenta, PorcentajeDeRentabilidad, IngresoPotencialMensual, IngresoPotencialAnual, UltimoStatus, NumeroDeRutasOfertadas, NoCotizacionEnFowardComentariosOP, ComentariosDelStatus, MovimientosRechazados, ComentariosDelRechazo) VALUES ('Juan', '12-02-21', 48, 'Logistica Juanito', 'Logistica Dev', 'pyme', 'mkt', 'Servidores', 'tecnologia', 'Laptops', 'Full', 'FFCC', 'TI', 'juanmange@transmodal.com', '2292220314', 'Ferrocarril', 'Almacen', 'Contenedor', 'Full container', 'boca del fio', 'ciudad de mexico,mexico, mx', 'Si', 'Prio', 23542, 4345234, 2344333, 50000, 20000, 25, 5430, 2500, 'Despachado', 10, 'foward', 'Darle Seguimiento', 3, 'Ninguno');
+
+
+'Juan', 12022021, 48, 'Logistica Juanito', 'Logistica Dev', 'pyme', 'mkt', 'Servidores', 'tecnologia', 'Laptops', 'Full', 'FFCC', 'TI', 'juanmange@transmodal.com', '2292220314', 'Ferrocarril', 'Almacen', 'Contenedor', 'Full container', 'boca del rio, ver, mx', 'ciudad de mexico,mexico, mx', 'Si', 'Prio', 23542, 4345234, 2344333, 50000, 20000, 25, 5430, 2500, 'Despachado', 10, 'foward', 'Darle Seguimiento', 3, 'Ninguno' 
+
+
+
+INSERT INTO pipeline ('Vendedor', ) VALUES ('Joseluis', '14-01-22', 03, 'Logistica mx', 'Logistica ver', 'pymes', 'mkt', 'Servidores', 'tecnologia', 'Laptops', 'Full', 'FFCC', 'TI', 'juanmange@transmodal.com', '2292220314', 'Ferrocarril', 'Almacen', 'Contenedor', 'Full container', 'boca del fio', 'ciudad de mexico,mexico, mx', 'Si', 'Prio', 23542, 4345234, 2344333, 50000, 20000, 25, 5430, 2500, 'Despachado', 10, 'foward', 'Darle Seguimiento', 3, 'Ninguno' );
+
+
+INSERT INTO pipeline (Vendedor,Fecha,Semana,NombreDelCliente,TipoDeCliente,TamañoDelCliente,BussinesConection,TipoDeEmpresa,TipoDeIndustria,TipoDeMercancia,TipoDeVenta,Servicio,Contacto,CorreoElectronico,Telefono,Trafico,TipoDeServicio,TipoDeEquipoUnidad,TipoDeModalidad,CiudadEstadoPaisOrigen,CiudadEstadoPaisDestino,Licitacion,Target,VolumenMensual,VolumenAnual,TarifaDeCompra,Profit,TarifaDeVenta,PorcentajeDeRentabilidad,IngresoPotencialMensual,IngresoPotencialAnual,UltimoStatus,NumeroDeRutasOfertadas,NoCotizacionEnFowardComentariosOP,ComentariosDelStatus,MovimientosRechazados,ComentariosDelRechazo) VALUES ('Joseluis', '16-02-24', 06, 'Logistica mex', 'Logistica ver', 'pymes', 'dev', 'Servidores', 'tecnologia', 'Laptops', 'Full', 'FFCC', 'TI', 'juanmange@transmodal.com', '2292220314', 'Ferrocarril', 'Almacen', 'Contenedor', 'Full container', 'boca del fio', 'ciudad de mexico,mexico, mx', 'Si', 'Prio', 23542, 4345234, 2344333, 50000, 20000, 25, 5430, 2500, 'Despachado', 10, 'foward', 'Darle Seguimiento', 3, 'Ninguno' );

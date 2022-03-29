@@ -1,0 +1,103 @@
+{{ define "index" }}
+{{ template "header" }}
+
+    <a name="" id="" class="btn btn-primary" href="/crear" role="button">Agregar Movimiento</a>
+        </br></br>
+        <table class="table">
+            <thead>
+                <tr>
+    <th>MovId</th>
+    <th>Vendedor</th>
+    <th>Fecha</th>		
+    <th>Semana</th>
+    <th>Nombre del cliete</th>
+    <th>Tipo de cliente</th>
+    <th>Tamaño del cliente</th>
+    <th>Bussines Conection</th>
+    <th>Tipo de empresa</th>
+    <th>Tipo de industria</th>
+    <th>Tipo de mercancia</th>
+    <th>Tipo de venta</th>
+    <th>Servicio</th>
+    <th>Contacto</th>
+    <th>Correo Electronico</th>
+    <th>Telefono</th>
+    <th>Trafico</th>
+    <th>Tipo de servicio</th>
+    <th>Tipo de equipo / unidad</th>
+    <th>Tipo de modalidad</th>
+    <th>Ciudad estado pais de origen</th>
+    <th>Ciudad estado pais destino</th>
+    <th>Licitacion</th>
+    <th>Target</th>
+    <th>Volumen mensual	</th>
+    <th>Volumen anual</th>
+    <th>Tarifa de compra en MXN o TC20 </th>
+    <th>Profit</th>
+    <th>Tarifa de venta en MXN o TC20 </th>
+    <th>% de rentabilidad (profit/venta)</th>
+    <th>Ingreso potencial mensual</th>					
+    <th>Ingreso potencial anual</th>	
+    <th>Ultimo status</th>
+    <th>Numero de rutas ofertadas</th>
+    <th>NO COTIZACION EN FORWARD / COMENTARIOS OP </th>		
+    <th>Comentarios del status</th>
+    <th>Movimientos Rechazados</th>
+    <th>Comentarios del rechazo</th>
+    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+        {{range.}}
+                <tr>
+                    <td>{{.MovId}}</td>
+                    <td>{{.Vendedor}}</td>
+                    <td>{{.Fecha}}</td>
+                    <td>{{.Semana}}</td>
+                    <td>{{.NombreDelCliente}}</td>
+                    <td>{{.TipoDeCliente}}</td>
+                    <td>{{.TamañoDeCliente}}</td>
+                    <td>{{.BussinesConection}}</td>
+                    <td>{{.TipoDeEmpresa}}</td> 
+                    <td>{{.TipoDeIndustria}}</td>
+                    <td>{{.TipoDeMercancia}}</td>
+                    <td>{{.TipoDeVenta}}</td>
+                    <td>{{.Servicio}}</td>
+                    <td>{{.Contacto}}</td>
+                    <td>{{.CorreoElectronico}}</td>
+                    <td>{{.Telefono}}</td>
+                    <td>{{.Trafico}}</td>
+                    <td>{{.TipoDeServicio}}</td>
+                    <td>{{.TipoDeEquipoUnidad}}</td>
+                    <td>{{.TipoDeModalidad}}</td>
+                    <td>{{.CiudadEstadoPaisOrigen}}</td>
+                    <td>{{.CiudadEstadoPaisDestino}}</td>
+                    <td>{{.Licitacion}}</td>
+                    <td>{{.Target}}</td>
+                    <td>{{.VolumenMensual}}</td>
+                    <td>{{.VolumenAnual}}</td>
+                    <td>{{.TarifaDeCompra}}</td>
+                    <td>{{.Profit}}</td>
+                    <td>{{.TarifaDeVenta}}</td>
+                    <td>{{.PorcentajeDeRentabilidad}}</td>
+                    <td>{{.IngresoPotencialMensual}}</td>
+                    <td>{{.IngresoPotencialAnual}}</td>
+                    <td>{{.UltimoStatus}}</td>
+                    <td>{{.NumeroDeRutasOfertadas}}</td>
+                    <td>{{.NoCotizacionEnFowardComentariosOP}}</td>
+                    <td>{{.ComentariosDelStatus}}</td>
+                    <td>{{.MovimientosRechazados}}</td>
+                    <td>{{.ComentariosDelRechazo}}</td>
+
+                    <td>
+                    <a name="" id="" class="btn btn-warning" href="/editar?id={{.MovId}}" role="button">Editar</a>
+                    |
+                    <a name="" id="" class="btn btn-danger" href="/borrar?id={{.MovId}}" role="button">Borrar</a>
+                    </td>
+                </tr>
+
+        {{end}}      
+            </tbody>
+        </table>
+{{ template "pie" }}
+{{end}}

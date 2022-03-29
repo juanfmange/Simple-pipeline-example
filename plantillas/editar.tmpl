@@ -1,0 +1,292 @@
+{{define "editar" }}
+{{ template "header"}}
+
+<div class="card">
+    <div class="card-header">
+        Empleados
+    </div>
+
+    <div class="card-body">
+        <form method="post" action="/actualizar">
+        <div class="form-group">
+    <label class="sr-only" for="inputName">ID del movimiento</label>
+    <input type="hidden" value="{{.MovId}}" class="form-control" name="movid" id="movid" placeholder="">
+    </div>
+
+          <!--div class="form-group">
+            <label for="">ID:</label>
+            <input type="text" class="form-control" name="movid" value="{{.MovId}}" id="movid" aria-describedby="helpId" placeholder="">
+            <small id="helpId" class="form-text text-muted">Inserte su ID</small>
+          </div>-->
+            
+            <div class="form-group">
+              <label for="">Vendedor:</label>
+              <input type="text"
+                class="form-control" name="vendedor" value="{{.Vendedor}}" id="vendedor" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu nombre</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Fecha:</label>
+              <input type="text"
+                class="form-control" name="fecha" value="{{.Fecha}}" id="fecha" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe la fecha</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Semana</label>
+              <input type="text"
+                class="form-control" name="semana" value="{{.Semana}}" id="semana" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Nombre del cliente:</label>
+              <input type="text"
+                class="form-control" name="nombredelcliente" value="{{.NombreDelCliente}}" id="nombredelcliente" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu nombre</small>
+            </div>
+
+
+            <div class="form-group">
+              <label for="">Tipo De Cliente</label>
+              <input type="text"
+                class="form-control" name="tipodecliente" value="{{.TipoDeCliente}}" id="tipodecliente" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Tamaño del cliente:</label>
+              <input type="text"
+                class="form-control" name="tamañodelcliente" value="{{.TamañoDeCliente}}" id="tamañodelcliente" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Bussines Conection:</label>
+              <input type="text"
+                class="form-control" name="bussinesconection" value="{{.BussinesConection}}" id="bussinesconection" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Tipo De Empresa</label>
+              <input type="text"
+                class="form-control" name="tipodeempresa" value="{{.TipoDeEmpresa}}" id="tipodeempresa" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Tipo De Industria:</label>
+              <input type="text"
+                class="form-control" name="tipodeindustria" value="{{.TipoDeIndustria}}" id="tipodeindustria" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Tipo De Mercancia:</label>
+              <input type="text"
+                class="form-control" name="tipodemercancia" value="{{.TipoDeMercancia}}" id="tipodemercancia" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Tipo De Venta:</label>
+              <input type="text"
+                class="form-control" name="tipodeventa" value="{{.TipoDeVenta}}" id="tipodeventa" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Servicio:</label>
+              <input type="text"
+                class="form-control" name="servicio" value="{{.Servicio}}" id="servicio" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Contacto:</label>
+              <input type="text"
+                class="form-control" name="contacto" value="{{.Contacto}}" id="contacto" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Correo Electronico:</label>
+              <input type="text"
+                class="form-control" name="correoelectronico" value="{{.CorreoElectronico}}" id="correoelectronico" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Telefono:</label>
+              <input type="text"
+                class="form-control" name="telefono" value="{{.Telefono}}" id="telefono" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Trafico:</label>
+              <input type="text"
+                class="form-control" name="trafico" value="{{.Trafico}}" id="trafico" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Tipo De Servicio:</label>
+              <input type="text"
+                class="form-control" name="tipodeservicio" value="{{.TipoDeServicio}}" id="tipodeservicio" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Tipo de equipo/unidad:</label>
+              <input type="text"
+                class="form-control" name="tipodeequipounidad" value="{{.TipoDeEquipoUnidad}}" id="tipodeequipounidad" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Tipo De modalidad:</label>
+              <input type="text"
+                class="form-control" name="tipodemodalidad" value="{{.TipoDeModalidad}}" id="tipodemodalidad" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Ciudad Estado Pais Origen:</label>
+              <input type="text"
+                class="form-control" name="ciudadestadopaisorigen" value="{{.CiudadEstadoPaisOrigen}}" id="ciudadestadopaisorigen" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Ciudad Estado Pais Destino:</label>
+              <input type="text"
+                class="form-control" name="ciudadestadopaisdestino" value="{{.CiudadEstadoPaisDestino}}" id="ciudadestadopaisdestino" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Licitacion:</label>
+              <input type="text"
+                class="form-control" name="licitacion" value="{{.Licitacion}}" id="licitacion" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Target:</label>
+              <input type="text"
+                class="form-control" name="target" value="{{.Target}}" id="target" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Volumen Mensual:</label>
+              <input type="text"
+                class="form-control" name="volumenmensual" value="{{.VolumenMensual}}" id="volumenmensual" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Volumen Anual:</label>
+              <input type="text"
+                class="form-control" name="volumenanual" value="{{.VolumenAnual}}" id="volumenanual" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Tarifa de compra:</label>
+              <input type="text"
+                class="form-control" name="tarifadecompra" value="{{.TarifaDeCompra}}" id="tarifadecompra" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Profit:</label>
+              <input type="text"
+                class="form-control" name="profit" value="{{.Profit}}" id="profit" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Tarifa de Venta:</label>
+              <input type="text"
+                class="form-control" name="tarifadeventa" value="{{.TarifaDeVenta}}" id="tarifadeventa" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">% de Rentabilidad:</label>
+              <input type="text"
+                class="form-control" name="porcentajederentabilidad" value="{{.PorcentajeDeRentabilidad}}" id="porcentajederentabilidad" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Ingreso potencial Mensual:</label>
+              <input type="text"
+                class="form-control" name="ingresopotencialmensual" value="{{.IngresoPotencialMensual}}" id="ingresopotencialmensual" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Ingreso Potencial anual:</label>
+              <input type="text"
+                class="form-control" name="ingresopotencialanual" value="{{.IngresoPotencialAnual}}" id="ingresopotencialanual" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Ultimo status:</label>
+              <input type="text"
+                class="form-control" name="ultimostatus" value="{{.UltimoStatus}}" id="ultimostatus" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Numero de rutas ofertadas:</label>
+              <input type="text"
+                class="form-control" name="numeroderutasofertadas" value="{{.NumeroDeRutasOfertadas}}" id="numeroderutasofertadas" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">No cotizacion en foward / Comentarios OP:</label>
+              <input type="text"
+                class="form-control" name="nocotizacionenfowardcomentariosop" value="{{.NoCotizacionEnFowardComentariosOP}}" id="nocotizacionenfowardcomentariosop" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Comentarios de Status:</label>
+              <input type="text"
+                class="form-control" name="comentariosdelstatus" value="{{.ComentariosDelStatus}}" id="comentariosdelstatus" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Movimientos rechazados:</label>
+              <input type="text"
+                class="form-control" name="movimientosrechazados" value="{{.MovimientosRechazados}}" id="movimientosrechazados" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Comentarios del rechazo:</label>
+              <input type="text"
+                class="form-control" name="comentariosdelrechazo" value="{{.ComentariosDelRechazo}}" id="comentariosdelrechazo" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe tu correo</small>
+            </div>
+
+
+
+            <button type="submit" class="btn btn-primary">Modificar</button>
+            <a name="" id="" class="btn btn-primary" href="/" role="button">Cancelar</a>
+
+
+        </form>
+    </div>
+
+{{ template "pie" }}
+{{end}}

@@ -1,0 +1,176 @@
+package main
+
+import (
+	"database/sql"
+	"fmt"
+	"net/http"
+	"text/template"
+
+	_ "github.com/go-sql-driver/mysql"
+)
+
+//Funcion de la conexion de las bases de datos a Go
+func conexionBD() (conexion *sql.DB) {
+	Driver := "mysql"
+	Usuario := "root"
+	contraseña := "260697"
+	nombre := "prueba"
+
+	conexion, err := sql.Open(Driver, Usuario+":"+contraseña+"@tcp(127.0.1.1)/"+nombre)
+	if err != nil {
+		panic(err.Error())
+	}
+	return conexion
+}
+
+// Declaracion de las variables de plantillas en .tmpl
+var plantillas = template.Must(template.ParseGlob("plantillas/*"))
+
+// funcion main como el front end con plantillas, estado impreso en consola y puerto http en lsiten and serve
+func main() {
+	http.HandleFunc("/", index)
+	http.HandleFunc("/crear", crear)
+	http.HandleFunc("/insertar", insertar)
+	http.HandleFunc("/borrar", Borrar)
+	http.HandleFunc("/editar", Editar)
+	http.HandleFunc("/actualizar", Actualizar)
+	fmt.Println("Servidor Corriendo....")
+	http.ListenAndServe(":8080", nil)
+}
+
+//Funcion editar del CRUD
+func Editar(w http.ResponseWriter, r *http.Request) {
+	idMovimiento := r.URL.Query().Get("id")
+	fmt.Println(idMovimiento)
+	conexionEstablecida := conexionBD()
+	registro, err := conexionEstablecida.Query("SELECT * FROM prueba WHERE MovId=?;", idMovimiento)
+
+	data := Datos{}
+	for registro.Next() {
+		var movid, semana int
+		var fgloba, tipodecliente, tipodeempresa string
+		err = registro.Scan(&movid, &fgloba, &semana, &tipodecliente, &tipodeempresa)
+		if err != nil {
+			panic(err.Error())
+		}
+
+		data.MovId = movid
+		data.Fgloba = fgloba
+		data.Semana = semana
+		data.TipoDeCliente = tipodecliente
+		data.TipoDeEmpresa = tipodeempresa
+
+	}
+	fmt.Println(data)
+	plantillas.ExecuteTemplate(w, "editar", data)
+}
+
+// Borrar funciona normal
+func Borrar(w http.ResponseWriter, r *http.Request) {
+	idMovimiento := r.URL.Query().Get("id")
+	fmt.Println(idMovimiento)
+
+	conexionEstablecida := conexionBD()
+
+	borrarRegistros, err := conexionEstablecida.Prepare("DELETE FROM prueba WHERE MovId=?")
+	if err != nil {
+		panic(err.Error())
+	}
+	borrarRegistros.Exec(idMovimiento)
+
+	http.Redirect(w, r, "/", 301)
+
+}
+
+// Estructura de los datos
+type Datos struct {
+	MovId         int
+	Fgloba        string
+	Semana        int
+	TipoDeCliente string
+	TipoDeEmpresa string
+}
+
+// Pantalla principla, donde se listan los elementos
+func index(w http.ResponseWriter, r *http.Request) {
+	conexionEstablecida := conexionBD()
+
+	registros, err := conexionEstablecida.Query("SELECT * FROM prueba;")
+
+	if err != nil {
+		panic(err.Error())
+	}
+
+	movimientos := Datos{}
+	arregloMovimientos := []Datos{}
+
+	for registros.Next() {
+		var movid, semana int
+		var fgloba, tipodecliente, tipodeempresa string
+		err = registros.Scan(&movid, &fgloba, &semana, &tipodecliente, &tipodeempresa)
+
+		if err != nil {
+			panic(err.Error())
+		}
+
+		movimientos.MovId = movid
+		movimientos.Fgloba = fgloba
+		movimientos.Semana = semana
+		movimientos.TipoDeCliente = tipodecliente
+		movimientos.TipoDeEmpresa = tipodeempresa
+
+		arregloMovimientos = append(arregloMovimientos, movimientos)
+
+	}
+
+	plantillas.ExecuteTemplate(w, "index", arregloMovimientos)
+}
+
+// funcion de direccionamiento a la pagina crear.tmpl
+func crear(w http.ResponseWriter, r *http.Request) {
+	//fmt.Fprintf(w, "Hola")
+	plantillas.ExecuteTemplate(w, "crear", nil)
+}
+
+// funcion de insertar en la base de datos
+func insertar(w http.ResponseWriter, r *http.Request) {
+	if r.Method == "POST" {
+
+		//movid := r.FormValue("movid")
+		fgloba := r.FormValue("fgloba")
+		semana := r.FormValue("semana")
+		tipodecliente := r.FormValue("tipodecliente")
+		tipodeempresa := r.FormValue("tipodeempresa")
+
+		conexionEstablecida := conexionBD()
+
+		insertarRegistros, err := conexionEstablecida.Prepare("INSERT INTO prueba (Fgloba, Semana, TipoDeCliente, TipoDeEmpresa) VALUES(?,?,?,?);")
+		if err != nil {
+			panic(err.Error())
+		}
+		insertarRegistros.Exec(fgloba, semana, tipodecliente, tipodeempresa)
+
+		http.Redirect(w, r, "/", 301)
+	}
+}
+
+// Editar la base de datos y actualizar
+func Actualizar(w http.ResponseWriter, r *http.Request) {
+	if r.Method == "POST" {
+
+		id := r.FormValue("movid")
+		fgloba := r.FormValue("fgloba")
+		semana := r.FormValue("semana")
+		tipodecliente := r.FormValue("tipodecliente")
+		tipodeempresa := r.FormValue("tipodeempresa")
+		conexionEstablecida := conexionBD()
+
+		modificarRegistros, err := conexionEstablecida.Prepare("UPDATE prueba SET Fgloba=?, Semana=?, TipoDeCliente=?, TipoDeEmpresa=? WHERE MovId=?;")
+		if err != nil {
+			panic(err.Error())
+		}
+		modificarRegistros.Exec(fgloba, semana, tipodecliente, tipodeempresa, id)
+
+		http.Redirect(w, r, "/", 301)
+	}
+}

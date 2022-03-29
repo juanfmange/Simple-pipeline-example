@@ -1,0 +1,310 @@
+{{define "crear"}}
+{{ template "header"}}
+
+
+<div class="card">
+    <div class="card-header">
+        Pipeline
+    </div>
+
+    <div class="card-body">
+        <form method="post" action="/insertar">
+
+          <!--<div class="form-group">
+            <label for="">MovID:</label>
+            <input type="text" class="form-control" name="movid" id="movid" aria-describedby="helpId" placeholder="">
+            <small id="helpId" class="form-text text-muted">Inserte su ID</small>
+          </div>-->
+            
+            <div class="form-group">
+              <label for="">Vendedor:</label>
+              <input type="text"
+                class="form-control" name="vendedor" id="vendedor" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escriba el nombre del vendedor</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Fecha:</label>
+              <input type="text"
+                class="form-control" name="fecha" id="fecha" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Fecha de inicio </small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Semana:</label>
+              <input type="text"
+                class="form-control" name="semana" id="semana" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Numero de semana del año</small>
+            </div>
+
+
+            <div class="form-group">
+              <label for="">Nombre del cliente:</label>
+              <input type="text"
+                class="form-control" name="nombredelcliente" id="nombredelcliente" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Nombre del cliente</small>
+            </div>
+
+            <div class="form-group">
+              <label for="">Tipo De Cliente:</label>
+              <input type="text"
+                class="form-control" name="tipodecliente" id="tipodecliente" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe el tipo de cliente</small>
+            </div>
+            <div class="form-group">
+
+
+            <div class="form-group">
+              <label for="">Tamaño del cliente:</label>
+              <input type="text"
+                class="form-control" name="tamañodelcliente" id="tamañodelcliente" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Tamaño de la empresa del cliente</small>
+            </div>
+
+
+            <div class="form-group">
+              <label for="">Bussines Conection:</label>
+              <input type="text"
+                class="form-control" name="bussinesconection" id="bussinesconection" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Como fue la coneccion de negocio</small>
+            </div>
+
+            
+              <label for="">Tipo de Empresa:</label>
+              <input type="text"
+                class="form-control" name="tipodeempresa" id="tipodeempresa" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escribe el sector de la empresa</small>
+            </div>
+            <div class="form-group">
+
+
+            <div class="form-group">
+              <label for="">Tipo de Industria:</label>
+              <input type="text"
+                class="form-control" name="tipodeindustria" id="tipodeindustria" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Área principal de la empresa</small>
+            </div>
+
+
+              <label for="">Tipo De Mercancia:</label>
+              <input type="text"
+                class="form-control" name="tipodemercancia" id="tipodemercancia" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Describa el tipo de mercancia </small>
+              <div class="form-group">
+
+
+              <label for="">Tipo De Venta:</label>
+              <input type="text"
+                class="form-control" name="tipodeventa" id="tipodeventa" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escriba el tipo de venta</small>
+              <div class="form-group">
+
+
+              <label for="">Servicio :</label>
+              <input type="text"
+                class="form-control" name="servicio" id="servicio" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Describa el tipo de servicio </small>
+              <div class="form-group">
+
+
+              <label for="">Contacto:</label>
+              <input type="text"
+                class="form-control" name="contacto" id="contacto" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Contacto con el cliente</small>
+              <div class="form-group">
+
+
+              <label for="">Correo Electronico:</label>
+              <input type="text"
+                class="form-control" name="correoelectronico" id="correoelectronico" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escriba el correo electronico del cliente</small>
+
+              <label for="">Telefono:</label>
+              <input type="text"
+                class="form-control" name="telefono" id="telefono" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Escriba el numero de telefono de contacto</small>
+              <div class="form-group">
+
+
+              <label for="">Trafico:</label>
+              <input type="text"
+                class="form-control" name="trafico" id="trafico" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Describa el tipo de trafico</small>
+              <div class="form-group">
+
+
+              <label for="">Tipo de servicio:</label>
+              <input type="text"
+                class="form-control" name="tipodeservicio" id="tipodeservicio" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Describa el tipo de servicio</small>
+              <div class="form-group">
+
+
+              <label for="">Tipo de equipo / unidad:</label>
+              <input type="text"
+                class="form-control" name="tipodeequipounidad" id="tipodeequipounidad" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Describa el tipo de equipo o unidad </small>
+              <div class="form-group">
+
+
+
+              <label for="">Tipo de modalidad:</label>
+              <input type="text"
+                class="form-control" name="tipodemodalidad" id="tipodemodalidad" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Describa el tipo de modalidad del movimiento</small>
+              <div class="form-group">
+
+
+
+              <label for="">Ciudad estado pais de origen:</label>
+              <input type="text"
+                class="form-control" name="ciudadestadopaisorigen" id="ciudadestadopaisorigen" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Orgigen del movimiento</small>
+              <div class="form-group">
+
+
+
+              <label for="">Ciudad estado pais destino:</label>
+              <input type="text"
+                class="form-control" name="ciudadestadopaisdestino" id="ciudadestadopaisdestino" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Destino del movimiento</small>
+              <div class="form-group">
+
+
+
+              <label for="">Licitacion :</label>
+              <input type="text"
+                class="form-control" name="licitacion" id="licitacion" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Tipo de licitacion</small>
+              <div class="form-group">
+
+
+
+              <label for="">Target:</label>
+              <input type="text"
+                class="form-control" name="target" id="target" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Objetivo de la venta</small>
+              <div class="form-group">
+
+
+
+              <label for="">Volumen Mensual:</label>
+              <input type="text"
+                class="form-control" name="volumenmensual" id="volumenmensual" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Cantidad de movimiento mensual</small>
+              <div class="form-group">
+
+
+
+              <label for="">Volumen Anual:</label>
+              <input type="text"
+                class="form-control" name="volumenanual" id="volumenanual" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Cantidad de movimiento anual</small>
+              <div class="form-group">
+
+
+
+              <label for="">Tarifa de compra en MXN o TC20 :</label>
+              <input type="text"
+                class="form-control" name="tarifadecompra" id="tarifadecompra" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Trarifa de compra</small>
+              <div class="form-group">
+
+
+
+              <label for="">Profit:</label>
+              <input type="text"
+                class="form-control" name="profit" id="profit" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Beneficio para transmodal</small>
+              <div class="form-group">
+
+
+
+              <label for="">Tarifa de venta en MXN o TC20 :</label>
+              <input type="text"
+                class="form-control" name="tarifadeventa" id="tarifadeventa" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Tarifa de venta</small>
+              <div class="form-group">
+
+
+
+              <label for="">% de rentabilidad (profit/venta):</label>
+              <input type="text"
+                class="form-control" name="porcentajederentabilidad" id="porcentajederentabilidad" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Qué tan rentable es el movimiento</small>
+              <div class="form-group">
+
+
+
+              <label for="">Ingreso potencial mensual:</label>
+              <input type="text"
+                class="form-control" name="ingresopotencialmensual" id="ingresopotencialmensual" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Ingreso potencial de los movimiento de forma mensual</small>
+              <div class="form-group">
+
+
+
+              <label for="">Ingreso potencial anual:</label>
+              <input type="text"
+                class="form-control" name="ingresopotencialanual" id="ingresopotencialanual" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Ingreso potencial de los movimiento de forma anual</small>
+              <div class="form-group">
+
+
+
+              <label for="">Ultimo status:</label>
+              <input type="text"
+                class="form-control" name="ultimostatus" id="ultimostatus" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Ultimo status del movimiento</small>
+              <div class="form-group">
+
+
+
+
+              <label for="">Numero de rutas ofertadas:</label>
+              <input type="text"
+                class="form-control" name="numeroderutasofertadas" id="numeroderutasofertadas" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Rutas ofertadas para el cliente</small>
+              <div class="form-group">
+
+
+
+
+              <label for="">NO COTIZACION EN FORWARD / COMENTARIOS OP :</label>
+              <input type="text"
+                class="form-control" name="nocotizacionenfowardcomentariosop" id="nocotizacionenfowardcomentariosop" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">numero de cotizaciones </small>
+              <div class="form-group">
+
+
+
+              <label for="">Comentarios del status:</label>
+              <input type="text"
+                class="form-control" name="comentariosdelstatus" id="comentariosdelstatus" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Comentarios del status</small>
+              <div class="form-group">
+
+
+              <label for="">Movimientos Rechazados:</label>
+              <input type="text"
+                class="form-control" name="movimientosrechazados" id="movimientosrechazados" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Numero de movimiento rechazados por el cliente</small>
+              <div class="form-group">
+
+
+              <label for="">Comentarios del rechazo:</label>
+              <input type="text"
+                class="form-control" name="comentariosdelrechazo" id="comentariosdelrechazo" aria-describedby="helpId" placeholder="">
+              <small id="helpId" class="form-text text-muted">Por qué rechazo el cliente</small>
+              <div class="form-group">
+
+
+            <!-- Botones -->
+            <button type="submit" class="btn btn-success">Agregar movimiento al pipeline </button>
+            <a name="" id="" class="btn btn-primary" href="/" role="button">Cancelar</a>
+
+        </form>
+    </div>
+
+{{ template "pie" }}
+{{end}}
